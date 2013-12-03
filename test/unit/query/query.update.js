@@ -36,9 +36,9 @@ describe('Collection Query', function() {
         });
       });
 
-      it('should change the updatedAt timestamp', function(done) {
+      it('should change the modified timestamp', function(done) {
         query.update({}, { name: 'foo' }, function(err, status) {
-          assert(status[0].updatedAt);
+          assert(status[0].modified);
           done();
         });
       });

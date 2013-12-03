@@ -41,8 +41,8 @@ describe('Collection Query', function() {
 
       it('should add timestamps', function(done) {
         query.create({}, function(err, status) {
-          assert(status.createdAt);
-          assert(status.updatedAt);
+          assert(status.created);
+          assert(status.modified);
           done();
         });
       });
@@ -90,8 +90,8 @@ describe('Collection Query', function() {
           identity: 'user',
           adapter: 'foo',
 
-          autoCreatedAt: false,
-          autoUpdatedAt: false,
+          autoCreated: false,
+          autoModified: false,
 
           attributes: {
             name: {
@@ -113,8 +113,8 @@ describe('Collection Query', function() {
 
       it('should NOT add timestamps', function(done) {
         query.create({}, function(err, status) {
-          assert(!status.createdAt);
-          assert(!status.updatedAt);
+          assert(!status.created);
+          assert(!status.modified);
           done();
         });
       });

@@ -45,8 +45,8 @@ describe('Collection Query', function() {
 
       it('should add timestamps', function(done) {
         query.findOrCreate({ name: 'Foo Bar' }, {}, function(err, status) {
-          assert(status.createdAt);
-          assert(status.updatedAt);
+          assert(status.created);
+          assert(status.modified);
           done();
         });
       });
